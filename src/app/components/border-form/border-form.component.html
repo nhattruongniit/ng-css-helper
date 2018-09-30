@@ -1,0 +1,54 @@
+<form [formGroup]="form">
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="borderWidth">
+        <span class="label">Border Width: </span>
+        {{form.controls['borderWidth'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="borderWidth" formControlName="borderWidth" [min]="0" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="borderRadius">
+        <span class="label">Border Radius: </span>
+        {{form.controls['borderRadius'].value}} %
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="borderRadius" formControlName="borderRadius" [min]="0" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="borderColor">
+        <span class="label">Border Color: </span><br>
+        {{form.controls['borderColor'].value | json}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-colorPicker id="borderColor" formControlName="borderColor" [inline]="true" [format]="'rgb'"></p-colorPicker>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="borderOpacity">
+        <span class="label">Border Opacity: </span>
+        {{getDecimalValue(form.controls['borderOpacity'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="borderOpacity" formControlName="borderOpacity" [min]="0" [max]="100" [step]="5"></p-slider>
+    </div>
+  </div>
+
+</form>

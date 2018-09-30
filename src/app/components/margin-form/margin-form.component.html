@@ -1,0 +1,70 @@
+<form [formGroup]="form">
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-dropdown
+        [showClear]="false"
+        placeholder="Select an option"
+        [required]="true"
+        formControlName="marginOptions"
+        styleClass="w-100"
+        [options]="marginDropdownOptions"
+      ></p-dropdown>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="marginTop">
+        <span class="label">{{marginTopLabel}}</span>
+        {{form.controls['marginTop'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="marginTop" formControlName="marginTop" [min]="0" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="marginBottom" [hidden]="shouldMarginBottomOrLeftDisabled">
+        <span class="label">Margin Bottom: </span>
+        {{form.controls['marginBottom'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="marginBottom" formControlName="marginBottom" [min]="0" [max]="100"
+                [hidden]="shouldMarginBottomOrLeftDisabled"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="marginRight" [hidden]="shouldMarginRightDisabled">
+        <span class="label">{{marginRightLabel}}</span>
+        {{form.controls['marginRight'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="marginRight" formControlName="marginRight" [min]="0" [max]="100"
+                [hidden]="shouldMarginRightDisabled"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="marginLeft" [hidden]="shouldMarginBottomOrLeftDisabled">
+        <span class="label">Padding Left: </span>
+        {{form.controls['marginLeft'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="marginLeft" formControlName="marginLeft" [min]="0" [max]="100"
+                [hidden]="shouldMarginBottomOrLeftDisabled"></p-slider>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,140 @@
+<form [formGroup]="form">
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h4 class="header-label">Perspective: </h4>
+    </div>
+    <div class="p-col-12">{{form.controls['perspective'].value}} px</div>
+    <div class="p-col-12">
+      <p-slider formControlName="perspective" [min]="0" [max]="1000"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h4 class="header-label">Rotation: </h4>
+    </div>
+    <div class="p-col-12">
+      <label for="rotateX">
+        <span class="label">Rotate X: </span>
+        {{form.controls['rotateX'].value}} deg
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="rotateX" formControlName="rotateX" [min]="-360" [max]="360"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="rotateY">
+        <span class="label">Rotate Y: </span>
+        {{form.controls['rotateY'].value}} deg
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="rotateY" formControlName="rotateY" [min]="-360" [max]="360"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="rotateZ">
+        <span class="label">Rotate Z: </span>
+        {{form.controls['rotateZ'].value}} deg
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="rotateZ" formControlName="rotateZ" [min]="-360" [max]="360"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h4 class="header-label">Scaling: </h4>
+    </div>
+    <div class="p-col-12">
+      <label for="scaleX">
+        <span class="label">Scale X: </span>
+        {{getDecimalValue(form.controls['scaleX'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="scaleX" formControlName="scaleX" [min]="-200" [max]="200" [step]="5"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="scaleY">
+        <span class="label">Scale Y: </span>
+        {{getDecimalValue(form.controls['scaleY'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="scaleY" formControlName="scaleY" [min]="-200" [max]="200" [step]="5"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="scaleZ">
+        <span class="label">Scale Z: </span>
+        {{getDecimalValue(form.controls['scaleZ'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="scaleZ" formControlName="scaleZ" [min]="-200" [max]="200" [step]="5"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h4 class="header-label">Translation: </h4>
+    </div>
+    <div class="p-col-12">
+      <label for="translateX">
+        <span class="label">Translate X: </span>
+        {{form.controls['translateX'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="translateX" formControlName="translateX" [min]="-500" [max]="500"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="translateY">
+        <span class="label">Translate Y: </span>
+        {{form.controls['translateY'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="translateY" formControlName="translateY" [min]="-500" [max]="500"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="translateZ">
+        <span class="label">Translate Z: </span>
+        {{form.controls['translateZ'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="translateZ" formControlName="translateZ" [min]="-500" [max]="500"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h4 class="header-label">Skew: </h4>
+    </div>
+    <div class="p-col-12">
+      <label for="skewX">
+        <span class="label">Skew X: </span>
+        {{form.controls['skewX'].value}} deg
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="skewX" formControlName="skewX" [min]="-45" [max]="45"></p-slider>
+    </div>
+    <div class="p-col-12">
+      <label for="skewY">
+        <span class="label">Skew Y: </span>
+        {{form.controls['skewY'].value}} deg
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="skewY" formControlName="skewY" [min]="-45" [max]="45"></p-slider>
+    </div>
+  </div>
+
+</form>

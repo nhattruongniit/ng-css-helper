@@ -1,0 +1,83 @@
+<form [formGroup]="form">
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="width">
+        <span class="label">Width: </span>
+        {{form.controls['width'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="width" formControlName="width" [min]="0" [max]="500"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="height">
+        <span class="label">Height: </span>
+        {{form.controls['height'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="height" formControlName="height" [min]="0" [max]="500"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="background">
+        <span class="label">Background: </span><br>
+        {{form.controls['background'].value | json}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-colorPicker id="background" formControlName="background" [inline]="true"
+        [format]="'rgb'"></p-colorPicker>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="bgOpacity">
+        <span class="label">Background Opacity: </span>
+        {{getDecimalValue(form.controls['backgroundOpacity'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="bgOpacity" formControlName="backgroundOpacity" [min]="0"
+        [max]="100" [step]="5"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="text">
+        <span class="label">Text Color: </span><br>
+        {{form.controls['text'].value | json}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-colorPicker id="text" formControlName="text" [inline]="true" [format]="'rgb'"></p-colorPicker>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="textOpacity">
+        <span class="label">Text Opacity: </span>
+        {{getDecimalValue(form.controls['textOpacity'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="textOpacity" formControlName="textOpacity" [min]="0" [max]="100"
+        [step]="5"></p-slider>
+    </div>
+  </div>
+
+</form>

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/themes/nova-light/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex";
+
+html, body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+:not(i) {
+  font-family: "Quicksand", sans-serif;
+}
+
+span.label {
+  font-weight: bold;
+  text-decoration: underline;
+}

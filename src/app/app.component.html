@@ -1,0 +1,72 @@
+<main class="d-flex w-100 h-100">
+  <aside class="d-flex flex-column side-bar">
+    <header class="text-center w-100">
+      <h3>CSS Helper</h3>
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="powered-by mr-1">Powered by </span>
+        <fa-icon [icon]="['fab', 'angular']" style="color: red" size="2x"></fa-icon>
+      </div>
+    </header>
+
+    <section>
+      <p-scrollPanel styleClass="w-100 flex-grow-1" [style]="{height: '650px'}">
+        <p-accordion>
+          <p-accordionTab header="Basic">
+            <app-basic-form (basicPropsChanged)="onBasicPropsChanged($event)"></app-basic-form>
+          </p-accordionTab>
+          <p-accordionTab header="Padding">
+            <app-padding-form (paddingPropsChanged)="onPaddingPropsChanged($event)"></app-padding-form>
+          </p-accordionTab>
+          <p-accordionTab header="Margin">
+            <app-margin-form (marginPropsChanged)="onMarginPropsChanged($event)"></app-margin-form>
+          </p-accordionTab>
+          <p-accordionTab header="Transform">
+            <app-transform-form (transformPropsChanged)="onTransformPropsChanged($event)"></app-transform-form>
+          </p-accordionTab>
+          <p-accordionTab header="Border">
+            <app-border-form (borderPropsChanged)="onBorderPropsChanged($event)"></app-border-form>
+          </p-accordionTab>
+          <p-accordionTab header="Shadow">
+            <app-shadow-form (shadowPropsChanged)="onShadowPropsChanged($event)"></app-shadow-form>
+          </p-accordionTab>
+        </p-accordion>
+      </p-scrollPanel>
+    </section>
+
+    <footer class="text-center w-100 mt-auto">
+      <div class="d-flex justify-content-center align-items-center">
+        <p-button styleClass="ui-button-rounded ui-button-secondary" label="Show CSS Code"
+                  (onClick)="showDialog = true"></p-button>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="copyrighted">Copyright &copy; </span>
+        <a href="https://github.com/pecko95" target="_blank">&nbsp;Pecko95</a>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="developed">Developed by </span>
+        <a href="https://github.com/nartc" target="_blank">&nbsp;nartc</a>
+      </div>
+    </footer>
+  </aside>
+  <aside class="w-100 box-wrapper">
+    <section class="d-flex align-items-center justify-content-center h-100"
+             [ngStyle]="backgroundStyle">
+      <app-box [basicPropsObs]="basicPropsObs" [paddingPropsObs]="paddingPropsObs"
+               [marginPropsObs]="marginPropsObs" [transformPropsObs]="transformPropsObs"
+               [borderPropsObs]="borderPropsObs" [shadowPropsObs]="shadowPropsObs"
+               (boxStyleEmitter)="onBoxStyleEmitted($event)"></app-box>
+    </section>
+  </aside>
+</main>
+
+<p-dialog header="CSS Style" [(visible)]="showDialog" [modal]="true" [responsive]="true"
+          [maximizable]="true" [baseZIndex]="10000">
+  <pre>
+    .box {{boxStyle | json}}
+  </pre>
+  <p-footer>
+    <p-button styleClass="ui-button-rounded" [label]="copyButtonLabel"
+              appClipboard [valueToCopy]="valueToCopy" (valueCopied)="onValueCopied($event)"
+              [disabled]="copyButtonDisabled"></p-button>
+  </p-footer>
+</p-dialog>

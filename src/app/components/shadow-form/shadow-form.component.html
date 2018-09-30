@@ -1,0 +1,89 @@
+<form [formGroup]="form">
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="shadowX">
+        <span class="label">Shadow X: </span>
+        {{form.controls['shadowX'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="shadowX" formControlName="shadowX" [min]="-100" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="shadowY">
+        <span class="label">Shadow Y: </span>
+        {{form.controls['shadowY'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="shadowY" formControlName="shadowY" [min]="-100" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="shadowSpread">
+        <span class="label">Shadow Spread: </span>
+        {{form.controls['shadowSpread'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="shadowSpread" formControlName="shadowSpread" [min]="0"
+        [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="shadowBlur">
+        <span class="label">Shadow Blur: </span>
+        {{form.controls['shadowBlur'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="shadowBlur" formControlName="shadowBlur" [min]="0" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="shadowColor">
+        <span class="label">Shadow Color: </span><br>
+        {{form.controls['shadowColor'].value | json}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-colorPicker id="shadowColor" formControlName="shadowColor" [inline]="true"
+        [format]="'rgb'"></p-colorPicker>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="shadowOpacity">
+        <span class="label">Shadow Opacity: </span>
+        {{getDecimalValue(form.controls['shadowOpacity'].value)}}
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="shadowOpacity" formControlName="shadowOpacity" [min]="0"
+        [max]="100" [step]="5"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-checkbox binary="true" formControlName="shadowInset" label="Inset"></p-checkbox>
+    </div>
+  </div>
+</form>

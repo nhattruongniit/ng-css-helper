@@ -1,0 +1,70 @@
+<form [formGroup]="form">
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-dropdown
+        [showClear]="false"
+        placeholder="Select an option"
+        [required]="true"
+        formControlName="paddingOptions"
+        styleClass="w-100"
+        [options]="paddingDropdownOptions"
+      ></p-dropdown>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="paddingTop">
+        <span class="label">{{paddingTopLabel}}</span>
+        {{form.controls['paddingTop'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="paddingTop" formControlName="paddingTop" [min]="0" [max]="100"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="paddingBottom" [hidden]="shouldPaddingBottomOrLeftDisabled">
+        <span class="label">Padding Bottom: </span>
+        {{form.controls['paddingBottom'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="paddingBottom" formControlName="paddingBottom" [min]="0" [max]="100"
+                [hidden]="shouldPaddingBottomOrLeftDisabled"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="paddingRight" [hidden]="shouldPaddingRightDisabled">
+        <span class="label">{{paddingRightLabel}}</span>
+        {{form.controls['paddingRight'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="paddingRight" formControlName="paddingRight" [min]="0" [max]="100"
+                [hidden]="shouldPaddingRightDisabled"></p-slider>
+    </div>
+  </div>
+
+  <br>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="paddingLeft" [hidden]="shouldPaddingBottomOrLeftDisabled">
+        <span class="label">Padding Left: </span>
+        {{form.controls['paddingLeft'].value}} px
+      </label>
+    </div>
+    <div class="p-col-12">
+      <p-slider id="paddingLeft" formControlName="paddingLeft" [min]="0" [max]="100"
+                [hidden]="shouldPaddingBottomOrLeftDisabled"></p-slider>
+    </div>
+  </div>
+</form>
