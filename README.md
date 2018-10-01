@@ -12,8 +12,8 @@ The project helps you to visualize some basic CSS properties on one object. You 
 
 # Future:
 
-- [] Generate better CSS code
-- [] Gradient
-- [] Background Gradient
-- [] Animations
-- [] Add more boxes for Layouts
+- [ ] Generate better CSS code
+- [ ] Gradient
+- [ ] Background Gradient
+- [ ] Animations
+- [ ] Add more boxes for Layouts
