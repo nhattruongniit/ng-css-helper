@@ -22,3 +22,6 @@ The project helps you to visualize some basic CSS properties on one object. You 
   - [ ] Background Gradient
   - [ ] Animations
   - [ ] Add more boxes for Layouts
+  
+  ## Suggestions
+  - [ ] Input for Colors  
