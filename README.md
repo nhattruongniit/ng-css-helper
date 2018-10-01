@@ -12,8 +12,13 @@ The project helps you to visualize some basic CSS properties on one object. You 
 
 # Future:
 
-- [ ] Generate better CSS code
-- [ ] Gradient
-- [ ] Background Gradient
-- [ ] Animations
-- [ ] Add more boxes for Layouts
+  ## Refactoring
+  - [ ] Refactor code in all forms to a potential `BaseForm`
+  - [ ] A service to bridge the forms with the box without using `AppComponent` as a Proxy
+  
+  ## Features
+  - [ ] Generate better CSS code
+  - [ ] Gradient
+  - [ ] Background Gradient
+  - [ ] Animations
+  - [ ] Add more boxes for Layouts
